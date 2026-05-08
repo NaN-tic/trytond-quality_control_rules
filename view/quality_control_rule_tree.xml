@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tree>
+    <field name="name"/>
+    <field name="company"/>
+    <field name="quality_template"/>
+    <field name="operations"/>
+    <field name="products"/>
+    <field name="document"/>
+    <field name="trigger_document"/>
+    <field name="creation_moment"/>
+    <field name="period_hours"/>
+    <field name="record_interval"/>
+    <field name="trigger_state"/>
+</tree>

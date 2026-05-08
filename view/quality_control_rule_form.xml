@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="company"/>
+    <field name="company"/>
+    <label name="quality_template"/>
+    <field name="quality_template"/>
+    <label name="document"/>
+    <field name="document"/>
+    <label name="trigger_document"/>
+    <field name="trigger_document"/>
+    <label name="creation_moment"/>
+    <field name="creation_moment"/>
+    <label name="period_hours"/>
+    <field name="period_hours"/>
+    <label name="record_interval"/>
+    <field name="record_interval"/>
+    <label name="trigger_state"/>
+    <field name="trigger_state"/>
+    <notebook colspan="4">
+        <page name="operations">
+            <field name="operations" colspan="4"/>
+        </page>
+        <page name="products">
+            <field name="products" colspan="4"/>
+        </page>
+    </notebook>
+</form>

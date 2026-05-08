@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="quality_control_rule_view_tree">
+            <field name="model">quality.control.rule</field>
+            <field name="type">tree</field>
+            <field name="name">quality_control_rule_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="quality_control_rule_view_form">
+            <field name="model">quality.control.rule</field>
+            <field name="type">form</field>
+            <field name="name">quality_control_rule_form</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_quality_control_rule_list">
+            <field name="name">Quality Control Rules</field>
+            <field name="res_model">quality.control.rule</field>
+            <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_quality_control_rule_list_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="quality_control_rule_view_tree"/>
+            <field name="act_window" ref="act_quality_control_rule_list"/>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_quality_control_rule_list_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="quality_control_rule_view_form"/>
+            <field name="act_window" ref="act_quality_control_rule_list"/>
+        </record>
+        <menuitem
+            parent="quality_control.menu_configuration"
+            action="act_quality_control_rule_list"
+            sequence="90"
+            id="menu_quality_control_rule_list"/>
+        <record model="ir.ui.menu-res.group"
+            id="menu_quality_control_rule_list_group">
+            <field name="menu" ref="menu_quality_control_rule_list"/>
+            <field name="group" ref="quality_control.group_quality_control_admin"/>
+        </record>
+
+        <record model="ir.model.access" id="access_quality_control_rule">
+            <field name="model">quality.control.rule</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_quality_control_rule_admin">
+            <field name="model">quality.control.rule</field>
+            <field name="group" ref="production.group_production_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+    </data>
+</tryton>
