@@ -43,6 +43,18 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="quality_control.group_quality_control_admin"/>
         </record>
 
+        <record model="ir.rule.group" id="rule_group_quality_control_rule_companies">
+            <field name="name">User in companies</field>
+            <field name="model">quality.control.rule</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_quality_control_rule_companies">
+            <field name="domain"
+                eval="[('company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_quality_control_rule_companies"/>
+        </record>
+
         <record model="ir.model.access" id="access_quality_control_rule">
             <field name="model">quality.control.rule</field>
             <field name="perm_read" eval="True"/>

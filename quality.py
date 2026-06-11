@@ -51,7 +51,11 @@ class QualityControlRule(ModelSQL, ModelView):
         'operation', 'Operations')
     products = fields.Many2Many(
         'quality.control.rule-product.template', 'rule', 'template',
-        'Products')
+        'Products',
+        context={
+            'company': Eval('company', -1),
+            },
+        depends=['company'])
     document = fields.Many2One(
         'ir.model', 'Document', required=True)
     trigger_document = fields.Many2One(
