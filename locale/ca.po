@@ -1,0 +1,95 @@
+#
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ca_ES\n"
+"Content-Transfer-Encoding: 8bit\n"
+"MIME-Version: 1.0\n"
+
+msgctxt "field:quality.control.rule,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:quality.control.rule,creation_moment:"
+msgid "Creation Moment"
+msgstr "Moment de creació"
+
+msgctxt "field:quality.control.rule,document:"
+msgid "Document"
+msgstr "Document"
+
+msgctxt "field:quality.control.rule,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:quality.control.rule,operations:"
+msgid "Operations"
+msgstr "Operacions"
+
+msgctxt "field:quality.control.rule,period_hours:"
+msgid "Hours Difference"
+msgstr "Hores de diferència"
+
+msgctxt "field:quality.control.rule,products:"
+msgid "Products"
+msgstr "Productes"
+
+msgctxt "field:quality.control.rule,quality_template:"
+msgid "Quality Template"
+msgstr "Plantilla de qualitat"
+
+msgctxt "field:quality.control.rule,record_interval:"
+msgid "Record Interval"
+msgstr "Interval de registre"
+
+msgctxt "field:quality.control.rule,trigger_document:"
+msgid "Trigger Document"
+msgstr "Document desencadenant"
+
+msgctxt "field:quality.control.rule,trigger_state:"
+msgid "Trigger State"
+msgstr "Estat desencadenant"
+
+msgctxt "model:ir.action,name:act_quality_control_rule_list"
+msgid "Quality Control Rules"
+msgstr "Regles de control de qualitat"
+
+msgctxt "model:ir.rule.group,name:rule_group_quality_control_rule_companies"
+msgid "User in companies"
+msgstr "Usuari en empreses"
+
+msgctxt "model:ir.ui.menu,name:menu_quality_control_rule_list"
+msgid "Quality Control Rules"
+msgstr "Regles de control de qualitat"
+
+msgctxt "model:quality.control.rule-product.template,name:"
+msgid "Quality Control Rule - Product Template"
+msgstr "Regla de control de qualitat - plantilla de producte"
+
+msgctxt "model:quality.control.rule-production.routing.operation,name:"
+msgid "Quality Control Rule - Operation"
+msgstr "Regla de control de qualitat - operació"
+
+msgctxt "model:quality.control.rule,name:"
+msgid "Quality Control Rule"
+msgstr "Regla de control de qualitat"
+
+msgctxt "selection:quality.control.rule,creation_moment:"
+msgid "Al crear"
+msgstr "En crear"
+
+msgctxt "selection:quality.control.rule,creation_moment:"
+msgid "Cada x registros"
+msgstr "Cada x registres"
+
+msgctxt "selection:quality.control.rule,creation_moment:"
+msgid "Dependiendo del estado"
+msgstr "Depenent de l'estat"
+
+msgctxt "selection:quality.control.rule,creation_moment:"
+msgid "Manual"
+msgstr "Manual"
+
+msgctxt "selection:quality.control.rule,creation_moment:"
+msgid "Período de tiempo"
+msgstr "Període de temps"
