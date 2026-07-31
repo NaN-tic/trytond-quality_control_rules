@@ -8,10 +8,32 @@ from trytond.pyson import Eval
 from trytond.transaction import Transaction
 
 __all__ = [
+    'QualityTemplate',
+    'QualityTemplateProductTemplate',
     'QualityControlRuleOperation',
     'QualityControlRuleProductTemplate',
     'QualityControlRule',
 ]
+
+
+class QualityTemplate(ModelSQL, ModelView):
+    'Quality Template'
+    __name__ = 'quality.template'
+
+    products = fields.Many2Many(
+        'quality.template-product.template', 'template', 'product',
+        'Products')
+
+
+class QualityTemplateProductTemplate(ModelSQL):
+    'Quality Template - Product Template'
+    __name__ = 'quality.template-product.template'
+
+    template = fields.Many2One(
+        'quality.template', 'Quality Template', required=True,
+        ondelete='CASCADE')
+    product = fields.Many2One(
+        'product.template', 'Product', required=True, ondelete='CASCADE')
 
 
 class QualityControlRuleOperation(ModelSQL):
@@ -88,6 +110,14 @@ class QualityControlRule(ModelSQL, ModelView):
     def default_creation_moment():
         return 'manual'
 
+    @fields.depends('quality_template', '_parent_quality_template.products',
+        'products')
+    def on_change_quality_template(self):
+        if self.quality_template:
+            self.products = list(self.quality_template.products or [])
+        else:
+            self.products = []
+
     @staticmethod
     def _get_id(record):
         return getattr(record, 'id', record)
@@ -129,7 +159,7 @@ class QualityControlRule(ModelSQL, ModelView):
     def get_trigger_states(self):
         if not self.trigger_document:
             return [('', '')]
-        Model = Pool().get(self.trigger_document.model)
+        Model = Pool().get(self.trigger_document.name)
         states = getattr(Model, 'state', None)
         if not states:
             return [('', '')]
@@ -214,11 +244,11 @@ class QualityControlRule(ModelSQL, ModelView):
         for rule in cls.search([]):
             if company_id and rule.company and rule.company.id != company_id:
                 continue
-            rule_document_model = rule.document.model if rule.document else None
+            rule_document_model = rule.document.name if rule.document else None
             if document_model and rule_document_model != document_model:
                 continue
             rule_trigger_document_model = (
-                rule.trigger_document.model if rule.trigger_document else None)
+                rule.trigger_document.name if rule.trigger_document else None)
             if (trigger_document_model and
                     rule_trigger_document_model != trigger_document_model):
                 continue
@@ -337,6 +367,8 @@ class QualityControlRule(ModelSQL, ModelView):
 
 def register():
     Pool.register(
+        QualityTemplate,
+        QualityTemplateProductTemplate,
         QualityControlRuleOperation,
         QualityControlRuleProductTemplate,
         QualityControlRule,

@@ -38,6 +38,18 @@ msgctxt "field:quality.control.rule,quality_template:"
 msgid "Quality Template"
 msgstr "Plantilla de qualitat"
 
+msgctxt "field:quality.template,products:"
+msgid "Products"
+msgstr "Productes"
+
+msgctxt "field:quality.template-product.template,product:"
+msgid "Product"
+msgstr "Producte"
+
+msgctxt "field:quality.template-product.template,template:"
+msgid "Quality Template"
+msgstr "Plantilla de qualitat"
+
 msgctxt "field:quality.control.rule,record_interval:"
 msgid "Record Interval"
 msgstr "Interval de registre"
@@ -73,6 +85,10 @@ msgstr "Regla de control de qualitat - operació"
 msgctxt "model:quality.control.rule,name:"
 msgid "Quality Control Rule"
 msgstr "Regla de control de qualitat"
+
+msgctxt "model:quality.template-product.template,name:"
+msgid "Quality Template - Product Template"
+msgstr "Plantilla de qualitat - plantilla de producte"
 
 msgctxt "selection:quality.control.rule,creation_moment:"
 msgid "Al crear"
